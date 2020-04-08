@@ -1,6 +1,7 @@
 @import './sass/helpers/variables';
 @import './sass/helpers/mixins';
-@import './sass/base/normallize.scss';
+@import './sass/base/normallize';
+@import './sass/base/overrides.scss';
 @import './sass/base/typography';
 @import './sass/layout/page';
 @import './sass/components/buttons';

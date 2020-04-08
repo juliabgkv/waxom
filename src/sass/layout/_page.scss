@@ -1,1 +1,99 @@
-@import '~/';
+.default-content-width {
+    margin: auto;
+    max-width: 1200px;
+}
+* {
+    box-sizing: border-box;
+}
+
+.home-section {
+    background-image: url('./images/backgrounds/homebackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    width: 100%;
+    position: relative; 
+    display: flex;
+
+    .panel {
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+    .panel-container {
+        display: flex;
+        padding: 40px 10px 10px; 
+
+        .logo {
+            margin-right: auto;
+        }
+        .nav-menu {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 50%;
+            
+            &-link {
+                color: #fff;
+                font-size: 14px;
+                text-decoration: none;
+                font-weight: 300;
+
+                &:hover,
+                &.active {
+                    color: #c7b299;
+                }
+            }
+        }
+        .additional-nav-icons {
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            
+            .additional-link {
+                margin-left: 20px;
+            }
+        }
+    }
+    .carousel-container {
+        width: 95%;
+        margin: auto;
+        
+        .owl-carousel {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            margin: auto;
+            width: 70%;
+            text-align: center;
+            z-index: 5;
+    
+            &-slider {
+                font-family: $raleway;
+                padding: 45px 0 50px;
+
+                &-content {
+                    min-height: 300px;
+                }
+                &-primary-title,
+                &-main-title,
+                &-description {
+                    margin: 0;
+                }
+                &-primary-title {
+                    @include fontStyles($medium, 36px);
+                }
+                &-main-title {
+                    @include fontStyles($extraBold, 52px);
+                    padding: 20px 0 30px;
+                }
+                &-description {
+                    @include fontStyles($light, 16px);
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+}

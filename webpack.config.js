@@ -1,10 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports ={
     mode: 'development',
-    devtool: 'inline-sourse-map',
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist'
     },
@@ -16,12 +17,30 @@ module.exports ={
     module: {
         rules: [
             {
+                test: /\.html$/i,
+                loader: 'html-loader'
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     'style-loader',
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'images'
+                }
             }
         ]
     },
@@ -29,6 +48,11 @@ module.exports ={
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        })
     ]
 };
