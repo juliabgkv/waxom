@@ -29,7 +29,7 @@
             margin-right: auto;
         }
         .nav-menu {
-            font-family: 'Montserrat', sans-serif;
+            font-family: $montserrat;
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -68,7 +68,6 @@
             margin: auto;
             width: 70%;
             text-align: center;
-            z-index: 5;
     
             &-slider {
                 font-family: $raleway;
