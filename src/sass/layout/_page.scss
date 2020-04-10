@@ -1,3 +1,7 @@
+/* ======================
+    COMMON
+=========================*/
+
 .default-content-width {
     margin: auto;
     max-width: 1200px;
@@ -5,6 +9,10 @@
 * {
     box-sizing: border-box;
 }
+
+/* ======================
+    HOME SECTION
+=========================*/
 
 .home-section {
     background-image: url('./images/backgrounds/homebackground.jpg');
@@ -82,16 +90,63 @@
                     margin: 0;
                 }
                 &-primary-title {
-                    @include fontStyles($medium, 36px);
+                    @include fontStyles($medium, 36);
                 }
                 &-main-title {
-                    @include fontStyles($extraBold, 52px);
+                    @include fontStyles($extraBold, 52);
                     padding: 20px 0 30px;
                 }
                 &-description {
-                    @include fontStyles($light, 16px);
+                    @include fontStyles($light, 16);
                     padding-bottom: 50px;
                 }
+            }
+        }
+    }
+}
+
+/* ======================
+    SERVICES SECTION
+=========================*/
+
+.services-section {
+    .services-container {
+        padding: 75px 10px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        .service {
+            flex: 1;
+            min-height: 250px;
+            position: relative;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+            .service-title {
+                @include fontStyles($semiBold, 22);
+                color: #555555;
+                padding: 30px 0 10px;
+                margin: 0;
+            }
+            .service-description {
+                @include fontStyles($light, 14);
+                line-height: 24px;
+                color: #8c8c8c;
+                padding: 10px;
+                margin: 0;
+            }
+            &:after {
+                content: " ";
+                display: inline-block;
+                background-color: #f1eee9;
+                width: 50%;
+                height: 3px;
+                position: absolute;
+                bottom: 0;
+                transform: translate(-50%, -50%);
             }
         }
     }
