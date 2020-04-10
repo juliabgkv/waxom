@@ -42,8 +42,8 @@
             position: absolute;
             top: calc(50% - #{$navArrowHeight} / 2);
             height: $navArrowHeight;
-            left: 5px;
-            right: 5px;
+            left: 5%;
+            right: 5%;
 
             .owl-prev,
             .owl-next {
