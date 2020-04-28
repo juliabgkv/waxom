@@ -9,7 +9,7 @@ $(document).ready(function(){
         items: 1,
         dots: true,
         loop: true,
-        // autoplay: true,
+        autoplay: true,
         autoplayHoverPause: true,
         nav: true,
         navText: ["", ""],
