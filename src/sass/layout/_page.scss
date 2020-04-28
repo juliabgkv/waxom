@@ -106,126 +106,126 @@
 }
 
 /* ======================
-    SERVICES SECTION
+    ABOUT SECTION
 =========================*/
 
-.services-section {
-    .services-container {
-        padding: 75px 10px;
-        text-align: center;
-        @include flexbox();
-        @include justify-content(space-between);
-
-        .service {
-            flex: 1;
-            min-height: 250px;
-            position: relative;
-
-            img {
-                width: 40px;
-                height: 40px;
+.about-section {
+    .services-block {
+        .services-container {
+            padding: 75px 10px;
+            text-align: center;
+            @include flexbox();
+            @include justify-content(space-between);
+    
+            .service {
+                flex: 1;
+                min-height: 250px;
+                position: relative;
+    
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+                .service-title {
+                    @include fontStyles($semiBold, 22);
+                    color: #555555;
+                    padding: 30px 0 10px;
+                    margin: 0;
+                }
+                .service-description {
+                    @include fontStyles($light, 14);
+                    line-height: 24px;
+                    color: #8c8c8c;
+                    padding: 10px;
+                    margin: 0;
+                }
+                &:after {
+                    content: " ";
+                    display: inline-block;
+                    background-color: #f1eee9;
+                    width: 50%;
+                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translate(-50%, -50%);
+                }
             }
-            .service-title {
-                @include fontStyles($semiBold, 22);
+        }
+    }
+    .realization-block {
+        background-color: #fbfaf8;
+        padding: 70px 10px 0;
+    
+        .realization-text {
+            text-align: center;
+    
+            .realization-title {
+                @include fontStyles($semiBold, 30);
                 color: #555555;
-                padding: 30px 0 10px;
                 margin: 0;
+    
+                .highlighted-word {
+                    color: #c7b299;
+                }
             }
-            .service-description {
-                @include fontStyles($light, 14);
-                line-height: 24px;
+            .realization-description {
+                @include fontStyles($light, 16);
                 color: #8c8c8c;
-                padding: 10px;
-                margin: 0;
+                line-height: 28px;
+                margin: 25px 0 40px;
             }
-            &:after {
-                content: " ";
-                display: inline-block;
-                background-color: #f1eee9;
-                width: 50%;
-                height: 3px;
+    
+        }
+        .browsers-slider {
+            position: relative;
+            height: 482px;
+    
+            .browser-slide {
                 position: absolute;
-                bottom: 0;
-                transform: translate(-50%, -50%);
+                bottom: -4px;
+    
+                &-left {
+                    left: 0;
+                }
+                &-right {
+                    right: 0;
+                }
+                &-center {
+                    left: 50%;
+                    transform: translate(-50%);
+                }
             }
         }
     }
-}
-
-/* ======================
-    ABOUT US SECTION
-=========================*/
-
-.realization-section {
-    background-color: #fbfaf8;
-    padding: 70px 10px 0;
-
-    .realization-text {
-        text-align: center;
-
-        .realization-title {
-            @include fontStyles($semiBold, 30);
-            color: #555555;
-            margin: 0;
-        }
-        .realization-description {
-            @include fontStyles($light, 16);
-            color: #8c8c8c;
-            line-height: 28px;
-            margin: 25px 0 40px;
-        }
-
-    }
-    .browsers-slider {
-        position: relative;
-        height: 482px;
-
-        .browser-slide {
-            position: absolute;
-            bottom: -4px;
-
-            &-left {
-                left: 0;
-            }
-            &-right {
-                right: 0;
-            }
-            &-center {
-                left: 50%;
-                transform: translate(-50%);
-            }
-        }
-    }
-}
-
-.wordpress-section {
-    background: #211b19; /* Old browsers */
-    background: -moz-linear-gradient(left, #211b19 1%, #4e3427 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #211b19 1%,#4e3427 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
-    padding: 50px 20px;
-
-    .wordpress-text-container {
-        @include flexbox();
-        @include justify-content(space-between);
-
-        .wordpress-text {
-            .wordpress-title,
-            .wordpress-description {
-                margin: 0;
-            }
-
-            .wordpress-title {
-                font-family: $raleway;
-                @include fontStyles($regular, 28);
-                color: #fff;
-                padding-bottom: 7px;
-            }
-            .wordpress-description {
-                font-family: $montserrat;
-                @include fontStyles($light, 18);
-                color: #615855;
+    .wordpress-block {
+        background: #211b19; /* Old browsers */
+        background: -moz-linear-gradient(left, #211b19 1%, #4e3427 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #211b19 1%,#4e3427 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
+        padding: 50px 20px;
+    
+        .wordpress-text-container {
+            @include flexbox();
+            @include justify-content(space-between);
+    
+            .wordpress-text {
+                .wordpress-title,
+                .wordpress-description {
+                    margin: 0;
+                }
+    
+                .wordpress-title {
+                    font-family: $raleway;
+                    @include fontStyles($regular, 28);
+                    color: #fff;
+                    padding-bottom: 7px;
+                }
+                .wordpress-description {
+                    font-family: $montserrat;
+                    @include fontStyles($light, 18);
+                    color: #615855;
+                }
             }
         }
     }
