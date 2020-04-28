@@ -33,3 +33,10 @@
          -ms-flex-align: $align;
             align-items: $align;
 }
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+       -moz-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+            flex-wrap: $wrap;
+  }
