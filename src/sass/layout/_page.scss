@@ -96,10 +96,10 @@
                     margin: 0;
                 }
                 &-primary-title {
-                    @include fontStyles($medium, 36);
+                    @include fontStyles($medium, 32);
                 }
                 &-main-title {
-                    @include fontStyles($extraBold, 52);
+                    @include fontStyles($extraBold, 40);
                     padding: 20px 0 30px;
                 }
                 &-description {
@@ -172,7 +172,7 @@
                 margin: 0;
             }
             .realization-description {
-                @include fontStyles($light, 16);
+                @include fontStyles($light, 15);
                 color: $primaryLight;
                 line-height: 28px;
                 margin: 25px 0 40px;
@@ -219,7 +219,7 @@
                 }
     
                 .wordpress-title {
-                    @include fontStyles($regular, 28);
+                    @include fontStyles($regular, 26);
                     color: #fff;
                     padding-bottom: 7px;
     
@@ -228,7 +228,7 @@
                     }
                 }
                 .wordpress-description {
-                    @include fontStyles($light, 18);
+                    @include fontStyles($light, 16);
                     color: #615855;
                 }
             }
@@ -248,13 +248,13 @@
     .portfolio-header {
         &-title {
             margin: 0;
-            @include fontStyles($semiBold, 21);
+            @include fontStyles($semiBold, 30);
             color: $primaryDark;
         }
         &-text {
             display: inline-block;
             width: 70%;
-            @include fontStyles($light, 12);
+            @include fontStyles($light, 15);
             line-height: 28px;
             color: $primaryLight;
         }
