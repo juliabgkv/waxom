@@ -21,8 +21,8 @@
     height: 100vh;
     color: #fff;
     width: 100%;
-    position: relative; 
-    display: flex;
+    position: relative;
+    @include flexbox();
 
     .panel {
         left: 0;
@@ -30,7 +30,7 @@
         width: 100%;
     }
     .panel-container {
-        display: flex;
+        @include flexbox();
         padding: 40px 10px 10px; 
 
         .logo {
@@ -38,10 +38,10 @@
         }
         .nav-menu {
             font-family: $montserrat;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
             width: 50%;
+            @include flexbox();
+            @include justify-content(space-around);
+            @include align-items(center);
             
             &-link {
                 color: #fff;
@@ -57,8 +57,8 @@
         }
         .additional-nav-icons {
             margin-left: 30px;
-            display: flex;
-            align-items: center;
+            @include flexbox();
+            @include align-items(center);
             
             .additional-link {
                 margin-left: 20px;
@@ -70,12 +70,12 @@
         margin: auto;
         
         .owl-carousel {
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
             margin: auto;
             width: 70%;
             text-align: center;
+            @include flexbox();
+            @include flex-flow(column);
+            @include justify-content(space-between);
     
             &-slider {
                 font-family: $raleway;
@@ -112,9 +112,9 @@
 .services-section {
     .services-container {
         padding: 75px 10px;
-        display: flex;
-        justify-content: space-between;
         text-align: center;
+        @include flexbox();
+        @include justify-content(space-between);
 
         .service {
             flex: 1;
@@ -147,6 +147,85 @@
                 position: absolute;
                 bottom: 0;
                 transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+/* ======================
+    REALIZATION SECTION
+=========================*/
+
+.realization-section {
+    background-color: #fbfaf8;
+    padding: 70px 10px 0;
+
+    .realization-text {
+        text-align: center;
+
+        .realization-title {
+            @include fontStyles($semiBold, 30);
+            color: #555555;
+            margin: 0;
+        }
+        .realization-description {
+            @include fontStyles($light, 16);
+            color: #8c8c8c;
+            line-height: 28px;
+            margin: 25px 0 40px;
+        }
+
+    }
+    .browsers-slider {
+        position: relative;
+        height: 482px;
+
+        .browser-slide {
+            position: absolute;
+            bottom: -4px;
+
+            &-left {
+                left: 0;
+            }
+            &-right {
+                right: 0;
+            }
+            &-center {
+                left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    }
+}
+
+.wordpress {
+    background: #211b19; /* Old browsers */
+    background: -moz-linear-gradient(left, #211b19 1%, #4e3427 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #211b19 1%,#4e3427 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
+    padding: 50px 20px;
+
+    .wordpress-text-container {
+        @include flexbox();
+        @include justify-content(space-between);
+
+        .wordpress-text {
+            .wordpress-title,
+            .wordpress-description {
+                margin: 0;
+            }
+
+            .wordpress-title {
+                font-family: $raleway;
+                @include fontStyles($regular, 28);
+                color: #fff;
+                padding-bottom: 7px;
+            }
+            .wordpress-description {
+                font-family: $montserrat;
+                @include fontStyles($light, 18);
+                color: #615855;
             }
         }
     }
