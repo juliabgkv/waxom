@@ -16,3 +16,14 @@ $(document).ready(function(){
         navContainer: '.carousel-container .custom-nav'
     });
 });
+
+$('#playVideoBtn').on('click', onPlayVideoBtnClick);
+
+function onPlayVideoBtnClick() {
+    $('#videoCover').fadeOut(1000, function() {
+        $(this).remove();
+        const $videoPlayer = $('#videoPlayer');
+        $videoPlayer.show();
+        $videoPlayer.find('iframe').attr('src', 'https://www.youtube.com/embed/BztJ2iKrCGY?autoplay=1');
+    });
+}
