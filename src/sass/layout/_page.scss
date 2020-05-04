@@ -15,6 +15,13 @@
 .description {
     font-family: $montserrat;
 }
+.gradient-background {
+    background: #211b19; /* Old browsers */
+    background: -moz-linear-gradient(left, #211b19 1%, #4e3427 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #211b19 1%,#4e3427 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
+}
 
 /* ======================
     HOME SECTION
@@ -201,11 +208,6 @@
         }
     }
     .wordpress-block {
-        background: #211b19; /* Old browsers */
-        background: -moz-linear-gradient(left, #211b19 1%, #4e3427 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, #211b19 1%,#4e3427 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
         padding: 50px 20px;
     
         .wordpress-text-container {
@@ -375,10 +377,9 @@
 =========================*/
 
 .features-section {
-    height: 700px;
     
     .about-us-video {
-        height: 100%;
+        height: 700px;
 
         .video-player {
             background-color: $primaryDark;
@@ -484,6 +485,39 @@
                     background-repeat: no-repeat;
                     background-position: left top;
                     
+                }
+            }
+        }
+    }
+    .counters-block {
+        .counters-container {
+            min-width: 1000px;
+            padding: 60px 0;
+            @include flexbox();
+            @include justify-content(space-around);
+
+            .counter-item {
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+
+                &-number {
+                    color: #fff;
+                    @include fontStyles($extraLight, 34);
+                    margin: 25px 0 10px;
+                }
+                &-text {
+                    color: #c7b299;
+                    @include fontStyles($light, 10);
+                    text-transform: uppercase;
+                    margin: 10px 0 30px;
+                }
+                &::after {
+                    display: block;
+                    content: "";
+                    width: 30px;
+                    height: 2px;
+                    background-color: #fff;
+                    margin: auto;
                 }
             }
         }
