@@ -1,42 +1,35 @@
 /* ===============================
-    POSITION RESET
+    HOME CAROUSEL OVERRIDES
 ================================== */
 
-.owl-carousel {
-    position: initial;
-}
-
-/* ===============================
-    DOTS OVERRIDES
-================================== */
-
-.owl-theme .owl-dots {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 5%;
-    left: 0;
-    right: 0;
-
-    .owl-dot {
-        span {
-            background-color: #8d8e90;
-            opacity: 0.5;
-        }
-
-        &.active span,
-        &:hover span {
-            box-shadow: 0 0 0 2px #ccffee;
-            background-color: transparent;
-        }
-    } 
-}
-
-/* ===============================
-    NAV BUTTONS OVERRIDES
-================================== */
-
-.carousel-container {
+.home-carousel-container {
+    .home-owl-carousel {
+        position: initial;
+    }
+    .owl-theme .owl-dots {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+    
+        .owl-dot {
+            span {
+                background-color: #8d8e90;
+                opacity: 0.5;
+            }
+    
+            &.active span,
+            &:hover span {
+                box-shadow: 0 0 0 2px #ccffee;
+                background-color: transparent;
+            }
+            &:focus {
+                outline: none;
+            }
+        } 
+    }
     .owl-theme {
         .custom-nav {
             position: absolute;
@@ -63,6 +56,9 @@
                     font-size: 2.5rem;
                     color: #cecece;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
             .owl-prev:hover,
             .owl-next:hover {
@@ -77,6 +73,38 @@
             .owl-next {
                 background: url('./images/home/right-arrow.png') no-repeat;
                 right: 0;
+            }
+        }
+    }
+}
+
+/* ===============================
+    POSTS CAROUSEL OVERRIDES
+================================== */
+
+.posts-owl-carousel {
+
+    .owl-nav {
+        padding-top: 35px;
+        margin: auto;
+        width: 5%;
+        @include flexbox();
+        @include justify-content(space-between);
+
+        button.owl-next,
+        button.owl-prev {
+            width: 22px;
+            height: 22px;
+            border-radius: 11px;
+            border: 1px solid #d4d4d4;
+            color: #d4d4d4;
+    
+            &:active {
+                border-color: #cab79f;
+                color: #cab79f;
+            }
+            &:focus {
+                outline: none;
             }
         }
     }
