@@ -666,3 +666,18 @@
     }
 }
 
+/* ======================
+    PARTNERS SECTION
+=========================*/
+
+.partners-section {
+    background: url(./images/partners/partners-background.png) no-repeat;
+    background-size: cover;
+    padding: 100px 10px;
+
+    .partners-logos-container {
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items(center);
+    }
+}
