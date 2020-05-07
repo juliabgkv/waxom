@@ -22,6 +22,25 @@
     background: linear-gradient(to right, #211b19 1%,#4e3427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 ); /* IE6-9 */
 }
+.read-more-btn {
+    position: relative;
+    font-family: $montserrat;
+    text-decoration: none;
+    @include fontStyles($regular, 14);
+    color: #fff;
+
+    &::after {
+        content: "";
+        height: 0;
+        width: 0;
+        border: 4px solid transparent;
+        border-left-color: #fff;
+        z-index: 2;
+        position: absolute;
+            top: 5px;
+            left: 85px;
+    }
+}
 
 /* ======================
     HOME SECTION
@@ -641,22 +660,10 @@
                         color: $primaryLight;
                     }
                     .read-more-btn {
-                        position: relative;
-                        font-family: $montserrat;
-                        text-decoration: none;
-                        @include fontStyles($light, 14);
                         color: #c7b299;
 
                         &::after {
-                            content: "";
-                            height: 0;
-                            width: 0;
-                            border: 4px solid transparent;
                             border-left-color: #c7b299;
-                            z-index: 2;
-                            position: absolute;
-                                top: 5px;
-                                left: 85px;
                         }
                     }
                 }
@@ -679,5 +686,154 @@
         @include flexbox();
         @include justify-content(space-between);
         @include align-items(center);
+    }
+}
+
+/* ======================
+    FOOTER SECTION
+=========================*/
+
+.footer-section {
+    .main-footer {
+        padding: 60px;
+        background-color: #191919;
+        
+        .main-footer-container {
+            @include flexbox();
+            @include justify-content(space-between);
+
+            .main-footer-item {
+                @include flex(1 1 0px);
+                padding: 10px;
+            }
+            .main-footer-title {
+                text-transform: capitalize;
+                @include fontStyles($bold, 20);
+                color: #fff;
+            }
+            .main-footer-text {
+                @include fontStyles($light, 14);
+                color: $primaryDark;
+            }
+            .footer-date {
+                font-family: $montserrat;
+                @include fontStyles($light, 12);
+                color: #363636;
+            }
+            .center-element {
+                border-top: 1px solid #363636;
+                border-bottom: 1px solid #363636;
+            }
+            .recent-posts-block {
+                .footer-posts {
+                    .post {
+                        .main-footer-text {
+                            margin: 0;
+                            padding: 10px 0 20px;
+                        }
+                        .footer-date {
+                            margin: 10px 0 0;
+                        }
+                    }
+                }
+            }
+            .twitter-block {
+                .twitter-post {
+                    &:not(:first-of-type) {
+                        padding-top: 10px;
+                    }
+                    .main-footer-text {
+                        margin: 0;
+                    }
+                    .footer-date {
+                        margin: 10px 0;
+                    }
+                    span {
+                        color: #00bff3;
+                    }
+                    &-link {
+                        transition: 0.2s ease-out;
+                        color: #959595;
+                        text-decoration: none;
+
+                        &:hover {cursor: pointer;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .dribble-widget-block {
+                .widgets-container {
+                    @include flexbox();
+
+                    .column {
+                        &:first-of-type {
+                            margin-right: 5px;
+                        }
+                        .widget:first-of-type {
+                            margin-bottom: 5px;
+                        }
+                        .widget {
+                            height: 100px;
+    
+                            img {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright-block {
+        background-color: #111111;
+        color: $primaryDark;
+        font-family: $montserrat;
+        font-weight: $light;
+
+        .copyright-container {
+            padding: 40px 5px;
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+
+            .left-side-elements,
+            .right-side-elements {
+                @include flexbox();
+            }
+            .left-side-elements {
+                .copyright-footer-element {
+                    border-left: 1px solid rgb(100, 100, 100);
+                    padding: 0 14px;
+                }
+
+                .copyright {
+                    margin: 0 14px 0 0;
+
+                    span {
+                        color: #959595;
+                    }
+                }
+                .copyright-block-link {
+                    color: $primaryDark;
+                    transition: 0.2s ease-out;
+                    text-decoration: none;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: #c7b299;
+                    }
+                }
+            }
+            .right-side-elements {
+                p  {
+                    margin-left: 20px;
+
+                    span {
+                        color: #959595;
+                    }
+                }
+            }
+        }
     }
 }
