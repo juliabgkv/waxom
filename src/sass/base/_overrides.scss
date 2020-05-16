@@ -45,7 +45,7 @@
                 color: inherit;
                 background: none;
                 border: none;
-                z-index: 100;
+                z-index: 99;
                 width: 40px;
                 height: $navArrowHeight;
                 background: transparent;
@@ -107,5 +107,11 @@
                 outline: none;
             }
         }
+    }
+}
+
+@media (max-width: 580px) {
+    .home-carousel-container .owl-theme .custom-nav {
+        display: none;
     }
 }
