@@ -12,7 +12,7 @@ $(document).ready(function() {
     let navMenuIsOpen = false;
 
     checkScroll();
-
+    
     $('.home-owl-carousel').owlCarousel({
         items: 1,
         dots: true,
@@ -23,15 +23,8 @@ $(document).ready(function() {
         navText: ["", ""],
         navContainer: '.home-carousel-container .custom-nav'
     });
-    $('.posts-owl-carousel').owlCarousel({
-        items: 3,
-        loop: true,
-        center: true,
-        margin: 20,
-        nav: true,
-        dots: false
-    });
-
+    initPostsCarousel();
+    
     $(window).on('scroll', checkScroll);
     $('#playVideoBtn').on('click', onPlayVideoBtnClick);
     $menuButton.on('click', onMenuButtonClick);
@@ -55,6 +48,7 @@ $(document).ready(function() {
         navMenuIsOpen = false;
         $menuButton.removeClass('open');
         $navMenu.removeClass('opened-menu');
+        $('body').css('overflow', 'auto');
 
         if($navPanel.hasClass(STICKED_CLASS) && !$navMenu.hasClass('opened-menu') && isScrollOnTop()) {
             $navPanel.removeClass(STICKED_CLASS)
@@ -64,6 +58,7 @@ $(document).ready(function() {
         navMenuIsOpen = true;
         $menuButton.addClass('open');
         $navMenu.addClass('opened-menu');
+        $('body').css('overflow', 'hidden');
 
         if(!$navPanel.hasClass(STICKED_CLASS)) {
             stickNavPanel();
@@ -81,5 +76,21 @@ $(document).ready(function() {
     }
     function stickNavPanel() {
         $navPanel.addClass(STICKED_CLASS);
+    }
+    function initPostsCarousel() {
+        const windowWidth = window.innerWidth;
+        const owlCarouselConfig = {
+            loop: true,
+            center: true,
+            margin: 20,
+            nav: true,
+            dots: false
+        };
+        if(windowWidth < 710 ) {
+            owlCarouselConfig.items = 1;
+        } else {
+            owlCarouselConfig.items = 3;
+        }
+        $('.posts-owl-carousel').owlCarousel(owlCarouselConfig);
     }
 });
