@@ -3,38 +3,49 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import './styles.scss';
 
 import 'owl.carousel/dist/owl.carousel.min.js';
+import 'waypoints/lib/jquery.waypoints.min.js';
+import 'counterup/jquery.counterup.min.js';
 
 $(document).ready(function() {
     const STICKED_CLASS = 'sticked';
+    const VIDEO_URL = 'https://www.youtube.com/embed/BztJ2iKrCGY?autoplay=1';
     const $menuButton = $('#menuButton');
     const $navPanel = $('#navPanel');
     const $navMenu = $('#navMenu');
     let navMenuIsOpen = false;
-
-    checkScroll();
-    
-    $('.home-owl-carousel').owlCarousel({
-        items: 1,
-        dots: true,
-        loop: true,
-        autoplay: true,
-        autoplayHoverPause: true,
-        nav: true,
-        navText: ["", ""],
-        navContainer: '.home-carousel-container .custom-nav'
+    $('.counter').counterUp({
+        delay: 10,
+        time: 2500
     });
-    initPostsCarousel();
-    
-    $(window).on('scroll', checkScroll);
-    $('#playVideoBtn').on('click', onPlayVideoBtnClick);
-    $menuButton.on('click', onMenuButtonClick);
 
+    init();
+
+    function init() {
+        checkScroll();
+        $('.home-owl-carousel').owlCarousel({
+            items: 1,
+            dots: true,
+            loop: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            nav: true,
+            navText: ["", ""],
+            navContainer: '.home-carousel-container .custom-nav'
+        });
+        initPostsCarousel();
+        bindEvents();
+    }
+    function bindEvents() {
+        $(window).on('scroll', checkScroll);
+        $('#playVideoBtn').on('click', onPlayVideoBtnClick);
+        $menuButton.on('click', onMenuButtonClick);
+    }
     function onPlayVideoBtnClick() {
         $('#videoCover').fadeOut(1000, function() {
             $(this).remove();
             const $videoPlayer = $('#videoPlayer');
             $videoPlayer.show();
-            $videoPlayer.find('iframe').attr('src', 'https://www.youtube.com/embed/BztJ2iKrCGY?autoplay=1');
+            $videoPlayer.find('iframe').attr('src', VIDEO_URL);
         });
     }
     function onMenuButtonClick() {
