@@ -52,7 +52,7 @@ $(document).ready(function() {
         });
     }
 
-    function onBurgerClick(e) {
+    function onBurgerClick() {
         if(!navMenuIsOpen) {
             openMenu();
         } else {
@@ -67,6 +67,7 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: $(target).offset().top - navPanelHeight
             }, 500);
+            onBurgerClick();
         }
     }
 

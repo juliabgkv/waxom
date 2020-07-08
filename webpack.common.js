@@ -1,15 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
     entry: './src/app.js',
     output: {
         filename: 'bundle.js',
