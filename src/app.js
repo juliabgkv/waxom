@@ -53,6 +53,10 @@ $(document).ready(function() {
     }
 
     function onBurgerClick() {
+        toggleBurgerMenu();
+    }
+
+    function toggleBurgerMenu() {
         if(!navMenuIsOpen) {
             openMenu();
         } else {
@@ -67,7 +71,9 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: $(target).offset().top - navPanelHeight
             }, 500);
-            onBurgerClick();
+            if($menuButton.css('display') !== 'none') {
+                toggleBurgerMenu();
+            }
         }
     }
 
@@ -83,6 +89,7 @@ $(document).ready(function() {
     }
 
     function openMenu() {
+        console.log('open menu func');
         navMenuIsOpen = true;
         $menuButton.addClass('open');
         $navMenu.addClass('opened-menu');
